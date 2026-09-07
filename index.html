@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Norium Legends</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background:
+        radial-gradient(
+          circle at 50% 40%,
+          #172536 0%,
+          #0d1825 35%,
+          #060c13 75%,
+          #030609 100%
+        );
+
+      color: #d9e1e8;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       OPENING
+    ========================= */
+
+    #opening {
+      position: fixed;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #172536 0%,
+          #0d1825 40%,
+          #050a10 100%
+        );
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 10;
+
+      transition: opacity 1.5s ease;
+    }
+
+
+    #opening img {
+      width: 120px;
+      height: 120px;
+
+      object-fit: cover;
+      border-radius: 50%;
+
+      opacity: 0;
+
+      animation: logoIn 2.5s ease forwards;
+
+      box-shadow:
+        0 0 40px rgba(50, 90, 120, 0.20);
+    }
+
+
+    @keyframes logoIn {
+
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+        filter: blur(7px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+
+    }
+
+
+    /* =========================
+       MAIN WEBSITE
+    ========================= */
+
+    #main {
+
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      opacity: 0;
+
+      transition: opacity 1.5s ease;
+    }
+
+
+    .container {
+
+      width: 90%;
+      max-width: 400px;
+
+    }
+
+
+    .main-logo {
+
+      width: 100px;
+      height: 100px;
+
+      object-fit: cover;
+      border-radius: 50%;
+
+      margin-bottom: 25px;
+
+      box-shadow:
+        0 0 35px rgba(45, 80, 110, 0.20);
+    }
+
+
+    h1 {
+
+      font-size: 28px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 8px;
+
+      color: #dce5ec;
+
+    }
+
+
+    p {
+
+      color: #718394;
+
+      font-size: 14px;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .button {
+
+      display: block;
+
+      width: 100%;
+
+      padding: 15px;
+
+      margin: 12px 0;
+
+      background: rgba(12, 22, 32, 0.75);
+
+      border: 1px solid #253746;
+
+      border-radius: 10px;
+
+      color: #cbd5dc;
+
+      text-decoration: none;
+
+      transition: 0.3s;
+
+    }
+
+
+    .button:hover {
+
+      background: rgba(25, 42, 55, 0.85);
+
+      border-color: #405a6e;
+
+      transform: translateY(-2px);
+
+    }
+
+
+    footer {
+
+      margin-top: 30px;
+
+      color: #43515d;
+
+      font-size: 12px;
+
+    }
+
+
+    /* =========================
+       TAP MESSAGE
+    ========================= */
+
+    #tap {
+
+      position: fixed;
+
+      bottom: 35px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      color: #718394;
+
+      font-size: 12px;
+
+      opacity: 0;
+
+      transition: opacity 0.5s;
+
+      z-index: 20;
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- OPENING -->
+
+  <div id="opening">
+
+    <img src="logo.png" alt="Norium Legends Logo">
+
+  </div>
+
+
+  <!-- BACKSOUND -->
+
+  <audio id="music" loop preload="auto">
+
+    <source src="lagu.mp3" type="audio/mpeg">
+
+  </audio>
+
+
+  <!-- TAP MESSAGE -->
+
+  <div id="tap">
+    Tap layar untuk lanjut
+  </div>
+
+
+  <!-- MAIN WEBSITE -->
+
+  <div id="main">
+
+    <div class="container">
+
+
+      <img
+        src="logo.png"
+        class="main-logo"
+        alt="Norium Legends"
+      >
+
+
+      <h1>NORIUM LEGENDS</h1>
+
+
+      <p>
+        Official Community Server
+      </p>
+
+
+      <!-- DISCORD -->
+
+      <a
+        href="https://discord.gg/5uqjTyGvCf"
+        class="button"
+        target="_blank"
+      >
+        Discord
+      </a>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        href="https://chat.whatsapp.com/JWAJWk9hIUd0KylB67WjrJ?s=cl&p=a&mlu=4&ilr=4"
+        class="button"
+        target="_blank"
+      >
+        WhatsApp
+      </a>
+
+
+      <!-- TIKTOK -->
+
+      <a
+        href="https://www.tiktok.com/@norium.legend"
+        class="button"
+        target="_blank"
+      >
+        TikTok
+      </a>
+
+
+      <footer>
+        © 2026 Norium Legends
+      </footer>
+
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+    const opening =
+      document.getElementById("opening");
+
+    const main =
+      document.getElementById("main");
+
+    const music =
+      document.getElementById("music");
+
+    const tap =
+      document.getElementById("tap");
+
+
+    /* MUSIC FADE IN */
+
+    function startMusic() {
+
+      music.volume = 0;
+
+      music.play().then(() => {
+
+        let volume = 0;
+
+        const fade = setInterval(() => {
+
+          volume += 0.02;
+
+          if (volume >= 1) {
+
+            volume = 1;
+
+            clearInterval(fade);
+
+          }
+
+          music.volume = volume;
+
+        }, 100);
+
+        tap.style.opacity = "0";
+
+      }).catch(() => {
+
+        tap.style.opacity = "1";
+
+      });
+
+    }
+
+
+    /* START INTRO */
+
+    function startIntro() {
+
+      startMusic();
+
+
+      setTimeout(() => {
+
+        opening.style.opacity = "0";
+
+      }, 4000);
+
+
+      setTimeout(() => {
+
+        opening.style.display = "none";
+
+        main.style.opacity = "1";
+
+        document.body.style.overflow = "auto";
+
+      }, 5500);
+
+    }
+
+
+    /* AUTOSTART */
+
+    window.addEventListener(
+      "load",
+      startIntro
+    );
+
+
+    /* MOBILE FALLBACK */
+
+    document.addEventListener(
+      "click",
+      () => {
+
+        if (music.paused) {
+
+          startMusic();
+
+        }
+
+      },
+      { once: true }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
